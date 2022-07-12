@@ -15,7 +15,7 @@ const client = new DiscordJS.Client({
 
 // Vars
 const roleName = 'there';
-const authorID = /* REDACTED USER ID */ '000000000000000000';
+const authorID = /* OWNER USER ID */ '406992000064159744';
 
 // Functions
 async function setRoles(g: Guild, r: Role){
@@ -71,7 +71,7 @@ client.on('messageCreate', async (message) => {
             message.reply({
                 content: 'bing',
             })
-        } else if(message.author.id !== /* REDACTED USER ID */ '000000000000000001') {
+        } else if(message.author.id !== /* USER ID */ '996272432551841812') {
             message.reply({
                 content: 'bong',
             })
