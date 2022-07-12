@@ -1,5 +1,7 @@
 // Imports
 import DiscordJS, { Guild, Intents, Message, Role } from 'discord.js';
+import WOKCommands from 'wokcommands';
+import path from 'path';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -15,7 +17,7 @@ const client = new DiscordJS.Client({
 
 // Vars
 const roleName = 'there';
-const authorID = /* OWNER USER ID */ '406992000064159744';
+const authorID = '417779789831602177';
 
 // Functions
 async function setRoles(g: Guild, r: Role){
@@ -45,6 +47,12 @@ function createRole(g: Guild){
 
 // On boot
 client.on('ready', async () => {
+    // Setup Commands
+    new WOKCommands(client, {
+        commandsDir: path.join(__dirname, 'commands'),
+        typeScript: true
+    })
+
     // Get guilds
     const guilds = await client.guilds!;
 
@@ -61,35 +69,19 @@ client.on('ready', async () => {
     })
 
     // Log
-    console.log("\nThe bot is ready");
+    console.log("The bot is ready");
 });
 
 // On send message
 client.on('messageCreate', async (message) => {
-    if(message.content === "bing") {
-        if(message.author.id === authorID) {
-            message.reply({
-                content: 'bing',
-            })
-        } else if(message.author.id !== /* USER ID */ '996272432551841812') {
+    if(message.content === "bing") {           
+        if(message.author.id !== '406992000064159744') {
             message.reply({
                 content: 'bong',
             })
-        } else {}
-        
-    }
-
-    // Kill bot
-    if(message.content === "*kill") {
-        if(message.author.id === authorID) {
-            message.reply({
-                content: 'Killing bot..',
-            }).then(m => {
-                client.destroy();
-            })
         } else {
             message.reply({
-                content: 'YOU ARE NOT OWNER',
+                content: 'bing',
             })
         }
     }
