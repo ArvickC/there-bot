@@ -9,4 +9,4 @@
  ## Other Features:
  - Typing "bing" will trigger the bot to respond with "bong".
  - Typing "L" will trigger the bot to respond with "L + ratio"
- - Typing "*kill" (if you are an authorized owner) will shut down the bot.
+ - Typing "!help" or /help will show a help page.
