@@ -104,12 +104,11 @@ client.on('presenceUpdate', (oldPresence, newPresence) => {
     };
 
     // Change roles
-    if(newPresence?.status === "online"){
-        member?.roles.remove(role)
-    }
     if(newPresence?.status === "offline") {
         member?.roles.add(role)
+        return;
     }
+    member?.roles.remove(role)
 });
 
 // Client start
