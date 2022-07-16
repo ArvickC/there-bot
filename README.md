@@ -12,3 +12,4 @@
  - Typing "!help" or /help will show a help page.
  - Typing /summon <trackNumber> <trackExtension> <voiceChannelName> will play the track *<trackNumber>* with the extension *<trackExtension>* in the voice channel *<voiceChannelName>*. You can keep these tracks in an "audio" folder in the root directory.
 - Typing "!leave" or /leave will remove the bot form your voice channel.
+- Typing "!music <playlist>" or /music <playlist> will play, *in a random order*, the songs in said playlist
