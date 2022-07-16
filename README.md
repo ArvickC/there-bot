@@ -10,3 +10,5 @@
  - Typing "bing" will trigger the bot to respond with "bong".
  - Typing "L" will trigger the bot to respond with "L + ratio"
  - Typing "!help" or /help will show a help page.
+ - Typing "!summon <trackNumber> <trackExtension> <voiceChannelName>" or /summon <trackNumber> <trackExtension> <voiceChannelName> will play the track *<trackNumber>* with the extension *<trackExtension>* in the voice channel *<voiceChannelName>*. You can keep these tracks in an "audio" folder in the root directory.
+- Typing "!leave" or /leave will remove the bot form your voice channel.
