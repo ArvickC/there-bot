@@ -7,13 +7,12 @@ import { generateDependencyReport } from "@discordjs/voice";
 export default {
     category: 'therebot',
     description: 'Shows bot overview.',
-    slash: 'both',
+    slash: true,
     minArgs: 3,
     expectedArgs: '<trackNumber> <trackExtension> <voiceChannel>',
     callback: ({message, interaction, args}) => {
         const { joinVoiceChannel, createAudioPlayer, createAudioResource } = require('@discordjs/voice');
-        let guild;
-        if(message) guild = message.guild; else guild = interaction.guild;
+        let guild = interaction.guild;
         
         const [trackNumber, trackExtension, vc] = args;
         const vcId = guild?.channels.cache.find(c => c.name === vc)?.id;
