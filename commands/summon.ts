@@ -6,7 +6,7 @@ import { generateDependencyReport } from "@discordjs/voice";
 
 export default {
     category: 'therebot',
-    description: 'Shows bot overview.',
+    description: 'Summon bot to play audio',
     slash: true,
     minArgs: 3,
     expectedArgs: '<trackNumber> <trackExtension> <voiceChannel>',
@@ -30,7 +30,6 @@ export default {
         const audioResource = createAudioResource(trackPath);
 
         player.play(audioResource);
-        player.unpause();
 
         const subscription = connection.subscribe(player);
 
