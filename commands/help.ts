@@ -6,7 +6,7 @@ export default {
     category: 'therebot',
     description: 'Shows bot overview.',
     slash: 'both',
-    callback: ({}) => {
+    callback: ({message, interaction}) => {
         const embed = new DiscordJS.MessageEmbed()
         .setColor('#25be55')
         .setTitle('Help')

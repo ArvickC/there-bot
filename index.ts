@@ -12,12 +12,12 @@ const client = new DiscordJS.Client({
         Intents.FLAGS.GUILD_MEMBERS,
         Intents.FLAGS.GUILD_PRESENCES,
         Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.GUILD_VOICE_STATES
     ]
 });
 
 // Vars
 const roleName = 'there';
-const authorID = '417779789831602177';
 
 // Functions
 async function setRoles(g: Guild, r: Role){
