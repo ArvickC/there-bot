@@ -8,15 +8,15 @@ export default {
     category: 'therebot',
     description: 'Shows bot overview.',
     slash: 'both',
-    minArgs: 2,
-    expectedArgs: '<trackNumber> <trackExtension>',
+    minArgs: 3,
+    expectedArgs: '<trackNumber> <trackExtension> <voiceChannel>',
     callback: ({message, interaction, args}) => {
         const { joinVoiceChannel, createAudioPlayer, createAudioResource } = require('@discordjs/voice');
-        const vcId = '745734535400128642';
         let guild;
         if(message) guild = message.guild; else guild = interaction.guild;
         
-        const [trackNumber, trackExtension] = args;
+        const [trackNumber, trackExtension, vc] = args;
+        const vcId = guild?.channels.cache.find(c => c.name === vc)?.id;
         
         const connection = joinVoiceChannel({
             channelId: vcId,
